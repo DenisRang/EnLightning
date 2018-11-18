@@ -99,11 +99,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-    }
-
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -168,23 +163,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case 5:
-                //MFA
-                closeWaitDialog();
-                if(resultCode == RESULT_OK) {
-                    String code = data.getStringExtra("mfacode");
-                    if(code != null) {
-                        if (code.length() > 0) {
-                            showWaitDialog("Signing in...");
-                            multiFactorAuthenticationContinuation.setMfaCode(code);
-                            multiFactorAuthenticationContinuation.continueTask();
-                        } else {
-                            inPassword.setText("");
-                            inPassword.requestFocus();
-                        }
-                    }
-                }
-                break;
             case 6:
                 //New password
                 closeWaitDialog();
@@ -196,23 +174,6 @@ public class MainActivity extends AppCompatActivity {
                     continueWithFirstTimeSignIn();
                 }
                 break;
-            case 7:
-                // Choose MFA
-                closeWaitDialog();
-                if(resultCode == RESULT_OK) {
-                    String option = data.getStringExtra("mfaOption");
-                    if (option != null) {
-                        if (option.length() > 0) {
-                            Log.d(TAG, " -- Selected Option: " + option);
-                            conitnueWithSelectedMfa(option);
-                        } else {
-                            inPassword.setText("");
-                            inPassword.requestFocus();
-                            TextView label = (TextView) findViewById(R.id.textViewUserPasswordMessage);
-                            label.setText("Login cancelled");
-                        }
-                    }
-                }
         }
     }
 

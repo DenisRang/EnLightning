@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group
-        android:id="@+id/group_user_change_password"
+        android:id="@+id/group_events"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_user_change_password"
+            android:id="@+id/nav_events"
+            android:title="Events" />
+    </group>
+
+    <group
+        android:id="@+id/group_news"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_news"
+            android:title="News" />
+    </group>
+
+    <group
+        android:id="@+id/group_change_password"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_change_password"
             android:title="Change password" />
     </group>
 
     <group
-        android:id="@+id/group_user_signout"
+        android:id="@+id/group_about"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_user_sign_out"
-            android:title="Sign out" />
+            android:id="@+id/nav_about"
+            android:title="About" />
     </group>
 
     <group
-        android:id="@+id/group_user_about"
+        android:id="@+id/group_signout"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_user_about"
-            android:title="About" />
+            android:id="@+id/nav_sign_out"
+            android:title="Sign out" />
     </group>
+
 </menu>
