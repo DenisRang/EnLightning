@@ -182,30 +182,13 @@ public class UserActivity extends AppCompatActivity {
 
         // Find which item was selected
         switch(item.getItemId()) {
-            case R.id.nav_user_add_attribute:
-                // Add a new attribute
-                addAttribute();
-                break;
-
             case R.id.nav_user_change_password:
                 // Change password
                 changePassword();
                 break;
-            case R.id.nav_user_verify_attribute:
-                // Confirm new user
-                // confirmUser();
-                attributesVerification();
-                break;
-            case R.id.nav_user_settings:
-                // Show user settings
-                showSettings();
-                break;
             case R.id.nav_user_sign_out:
                 // Sign out from this account
                 signOut();
-                break;
-            case R.id.nav_user_trusted_devices:
-                showTrustedDevices();
                 break;
             case R.id.nav_user_about:
                 // For the inquisitive
@@ -252,18 +235,6 @@ public class UserActivity extends AppCompatActivity {
         AppHelper.getPool().getUser(AppHelper.getCurrUser()).updateAttributesInBackground(updatedUserAttributes, updateHandler);
     }
 
-    // Show user MFA Settings
-    private void showSettings() {
-        Intent userSettingsActivity = new Intent(this,SettingsActivity.class);
-        startActivityForResult(userSettingsActivity, 20);
-    }
-
-    // Add a new attribute
-    private void addAttribute() {
-        Intent addAttrbutesActivity = new Intent(this,AddAttributeActivity.class);
-        startActivityForResult(addAttrbutesActivity, 22);
-    }
-
     // Delete attribute
     private void deleteAttribute(String attributeName) {
         showWaitDialog("Deleting...");
@@ -282,11 +253,6 @@ public class UserActivity extends AppCompatActivity {
     private void attributesVerification() {
         Intent attrbutesActivity = new Intent(this,VerifyActivity.class);
         startActivityForResult(attrbutesActivity, 21);
-    }
-
-    private void showTrustedDevices() {
-        Intent trustedDevicesActivity = new Intent(this, DeviceSettings.class);
-        startActivity(trustedDevicesActivity);
     }
 
     // Sign out user

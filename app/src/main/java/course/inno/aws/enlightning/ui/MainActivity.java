@@ -1,20 +1,3 @@
-/*
- * Copyright 2013-2017 Amazon.com,
- * Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Amazon Software License (the "License").
- * You may not use this file except in compliance with the
- * License. A copy of the License is located at
- *
- *      http://aws.amazon.com/asl/
- *
- * or in the "license" file accompanying this file. This file is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- * CONDITIONS OF ANY KIND, express or implied. See the License
- * for the specific language governing permissions and
- * limitations under the License.
- */
-
 package course.inno.aws.enlightning.ui;
 
 import android.app.ProgressDialog;
@@ -346,22 +329,9 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, 3);
     }
 
-    private void mfaAuth(MultiFactorAuthenticationContinuation continuation) {
-        multiFactorAuthenticationContinuation = continuation;
-        Intent mfaActivity = new Intent(this, MFAActivity.class);
-        mfaActivity.putExtra("mode", multiFactorAuthenticationContinuation.getParameters().getDeliveryMedium());
-        startActivityForResult(mfaActivity, 5);
-    }
-
     private void firstTimeSignIn() {
         Intent newPasswordActivity = new Intent(this, NewPassword.class);
         startActivityForResult(newPasswordActivity, 6);
-    }
-
-    private void selectMfaToSignIn(List<String> options, Map<String, String> parameters) {
-        Intent chooseMfaActivity = new Intent(this, ChooseMFA.class);
-        AppHelper.setMfaOptionsForDisplay(options, parameters);
-        startActivityForResult(chooseMfaActivity, 7);
     }
 
     private void conitnueWithSelectedMfa(String option) {
@@ -545,7 +515,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void getMFACode(MultiFactorAuthenticationContinuation multiFactorAuthenticationContinuation) {
             closeWaitDialog();
-            mfaAuth(multiFactorAuthenticationContinuation);
         }
 
         @Override
@@ -575,11 +544,6 @@ public class MainActivity extends AppCompatActivity {
                         newPasswordContinuation.getRequiredAttributes());
                 closeWaitDialog();
                 firstTimeSignIn();
-            } else if ("SELECT_MFA_TYPE".equals(continuation.getChallengeName())) {
-                closeWaitDialog();
-                mfaOptionsContinuation = (ChooseMfaContinuation) continuation;
-                List<String> mfaOptions = mfaOptionsContinuation.getMfaOptions();
-                selectMfaToSignIn(mfaOptions, continuation.getParameters());
             }
         }
     };
