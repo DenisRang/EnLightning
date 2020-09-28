@@ -24,11 +24,11 @@ We created an application for monitoring different events.
 
 You can see demo videos how everything works:
 
-<https://youtu.be/qzQj0Dumi5w>
+[https://youtu.be/qzQj0Dumi5w]
 
-<https://youtu.be/EBbWyyyXKYo>
+[https://youtu.be/EBbWyyyXKYo]
 
-<https://youtu.be/QJv9fIW-2-E>
+[https://youtu.be/QJv9fIW-2-E]
 
-<https://youtu.be/0aOWurxiaxs>
+[https://youtu.be/0aOWurxiaxs]
 
