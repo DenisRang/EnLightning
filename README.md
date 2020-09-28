@@ -14,8 +14,10 @@ We created an application for monitoring different events.
 ## Demo
 Diagram
 [<img src=images/diagram.png width="50%">]()
+
 Main screen
 [<img src=images/1.png width="50%">]()
+
 Registration
 [<img src=images/2.png width="50%">]()
 
