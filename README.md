@@ -19,7 +19,7 @@ We created an application for monitoring different events.
 [<img src=images/1.png height="50%">]()
 
 ### Registration
-[<img src=images/2.png height="50%">]()
+[<img src=images/2.jpeg height="50%">]()
 
 
 You can see demo videos how everything works:
