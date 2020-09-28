@@ -13,13 +13,13 @@ We created an application for monitoring different events.
 
 ## Demo
 ### Diagram
-[<img src=images/diagram.png height="50%">]()
+[<img src=images/diagram.png">]()
 
 ### Main screen
-[<img src=images/1.png height="50%">]()
+[<img src=images/1.png width="30%">]()
 
 ### Registration
-[<img src=images/2.jpeg height="50%">]()
+[<img src=images/2.jpeg width="30%">]()
 
 
 You can see demo videos how everything works:
