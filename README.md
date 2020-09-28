@@ -13,7 +13,7 @@ We created an application for monitoring different events.
 
 ## Demo
 ### Diagram
-[<img src=images/diagram.png>]()
+[<img src=images/diagram.jpeg>]()
 
 ### Main screen
 [<img src=images/1.png width="30%">]()
