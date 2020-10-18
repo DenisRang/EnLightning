@@ -1,4 +1,4 @@
-# DriverTerminal
+# EnLightning
 
 An event management helper built on GraphQL using
 AppSync​ service provided by Amazon.
